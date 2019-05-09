@@ -1,21 +1,24 @@
 import math
 
 from Base.Expenses.fixed import auto_insurance, condo_association_fee, child_support, hayden_war_chest_fund, \
-    home_insurance, mortgage_payment, reimburse_mama, wroth_ira_contribution
-from Base.Expenses.variable import gas, groceries, pharmacy, utilities
+    home_insurance, medical_copays, mortgage_payment, reimburse_mama, wroth_ira_contribution
+from Base.Expenses.variable import gas, groceries, utilities
 from Base.Income.external import cash_on_hand, current_savings
 
 company = input("Company: ")
-if company == "Stock Yards Bank":
-    from Positions.Local.StockYardsBank.web_developer import annual_fixed_benefit_expenses,\
+if company == "Stock Yards Bank" or company == "SYB":
+    from Positions.Local.SYB.web_developer import annual_fixed_benefit_expenses,\
         gross_job_specific_base_income, job_title, monthly_fixed_benefit_expenses, months, taxes
-elif company == "HCL Technologies":
+elif company == "ABBTECH Professional Resources, Inc." or company == "APR":
+    from Positions.OutOfTown.APR.computer_technician import annual_fixed_benefit_expenses,\
+        gross_job_specific_base_income, job_title, monthly_fixed_benefit_expenses, months, taxes
+elif company == "HCL Technologies" or company == "HCL":
     from Positions.OutOfTown.HCL.python_developer import annual_fixed_benefit_expenses, gross_job_specific_base_income,\
         job_title, monthly_fixed_benefit_expenses, months, taxes
-elif company == "Material Handling Systems":
+elif company == "Material Handling Systems" or company == "MHS":
     from Positions.Local.MHS.senior_power_bi_developer import annual_fixed_benefit_expenses,\
         gross_job_specific_base_income, job_title, monthly_fixed_benefit_expenses, months, taxes
-elif company == "TATA Consultantancy Services":
+elif company == "TATA Consultantancy Services" or company == "TCS":
     from Positions.OutOfTown.TCS.data_scientist import annual_fixed_benefit_expenses, gross_job_specific_base_income,\
         job_title, monthly_fixed_benefit_expenses, months, taxes
 else:
@@ -41,7 +44,7 @@ adjusted_gross_income = external_revenue_sources + gross_job_specific_base_incom
 # Private Fixed Expenses
 # Monthly
 monthly_private_fixed_expenses = auto_insurance + child_support + condo_association_fee + home_insurance + \
-                                 mortgage_payment
+                                 medical_copays + mortgage_payment
 
 # Annual
 annual_private_fixed_expenses = wroth_ira_contribution
@@ -59,7 +62,7 @@ subtotal_benefits_fixed_expenses = (annual_fixed_benefit_expenses * math.ceil(mo
 
 # Variable Expenses
 # Monthly
-monthly_variable_expenses = gas + groceries + pharmacy + utilities
+monthly_variable_expenses = gas + groceries + utilities
 
 # One-Time Expenses
 total_one_time_major_expenses = hayden_war_chest_fund + reimburse_mama

@@ -6,7 +6,7 @@ from Base.calculations import company, duration, emergency_savings, external_rev
     total_calculated_expenses, wages
 
 # Sets currency type by locale
-locale.setlocale(locale.LC_ALL, 'en_US')
+locale.setlocale(locale.LC_ALL, '')
 
 
 '''Balance Sheet'''
