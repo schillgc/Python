@@ -41,7 +41,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Positions/OutOfTown/APR/computer_technician.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="527">
               <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
@@ -102,7 +102,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -120,61 +120,6 @@
             <path>
               <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
               <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-              <item name="Expenses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-              <item name="Income" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="Local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-              <item name="APR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-              <item name="HCL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-              <item name="TCS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -426,7 +371,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Positions/OutOfTown/APR/computer_technician.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="527">
           <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
