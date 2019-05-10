@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f184cda-c226-4862-89a4-0d3386ac684c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Positions/OutOfTown/APR/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Positions/OutOfTown/APR/computer_technician.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Contract Financials Balance Sheet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Contract Financials Balance Sheet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/Expenses/fixed.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/Expenses/fixed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/Expenses/variable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/Expenses/variable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/Income/external.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/Income/external.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/calculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Positions/Local/StockYardsBank/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Positions/Local/SYB/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Positions/Local/StockYardsBank/web_developer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Positions/Local/SYB/web_developer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/execute_this_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/execute_this_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Django/Beargrass_Christian_Church/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Django/Beargrass_Christian_Church/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Django/Beargrass_Christian_Church/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Django/Beargrass_Christian_Church/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Django/Gymkhana_Stampede" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flask/Dungeon Game/dice/dice.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flask/Dungeon Game/dice/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flask/Dungeon Game/dungeon/dd_game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flask/Dungeon Game/rps/game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flask/Dungeon Game/rps/moves.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Flask/Dungeon Game/rps/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Jupyter Notebook/Bird Scooter/BirdScooter.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Jupyter Notebook/Louisville Metro Government/Hours Not Worked/LouisvilleMetroGovernmentHoursNotWorked.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Jupyter Notebook/Mass Shootings/Grades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Jupyter Notebook/Mass Shootings/MassShootings.ipynb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,21 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Positions/OutOfTown/APR/computer_technician.py">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="527">
-=======
-            <state relative-caret-position="187">
->>>>>>> 9710eae95b8959fcf3bac09919ffedff73879f51
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -125,64 +85,6 @@
               <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
               <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
             </path>
-<<<<<<< HEAD
-=======
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-              <item name="Expenses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-              <item name="Income" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="Local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-              <item name="APR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-              <item name="HCL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Contract Financials Balance Sheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Job_Analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="Positions" type="462c0819:PsiDirectoryNode" />
-              <item name="OutOfTown" type="462c0819:PsiDirectoryNode" />
-              <item name="TCS" type="462c0819:PsiDirectoryNode" />
-            </path>
->>>>>>> 9710eae95b8959fcf3bac09919ffedff73879f51
           </expand>
           <select />
         </subPane>
@@ -285,9 +187,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23676248" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23676248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -299,7 +200,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.4248366" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.4248366" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -433,12 +334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Positions/OutOfTown/APR/computer_technician.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="527">
-=======
-        <state relative-caret-position="187">
->>>>>>> 9710eae95b8959fcf3bac09919ffedff73879f51
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="141">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
