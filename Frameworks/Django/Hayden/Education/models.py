@@ -7,10 +7,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Institution(models.Model):
     name = models.CharField(max_length=250)
-    next_year_full_tuition = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return "$" + str(self.next_year_full_tuition)
+        return self.name
+
+    next_year_full_tuition = models.DecimalField(max_digits=7, decimal_places=2)
 
     headmaster = models.CharField(max_length=250)
     address = AddressField(on_delete=models.CASCADE)
@@ -40,11 +41,7 @@ class Institution(models.Model):
     financial_aid_awarded = models.DecimalField(
         max_digits=7,
         decimal_places=2,
-        blank=True,
     )
-
-    def __str__(self):
-        return "$" + str(self.financial_aid_awarded)
 
     description = models.TextField(
         max_length=10000,
@@ -68,6 +65,9 @@ class Credit(models.Model):
     )
 
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
     SIXTH_GRADE = '6G'
     SEVENTH_GRADE = '7G'
