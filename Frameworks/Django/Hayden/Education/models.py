@@ -97,7 +97,7 @@ class Credit(models.Model):
     def is_upperschool(self):
         return self.grade_level in {self.FRESHMAN, self.SOPHOMORE, self.JUNIOR, self.SENIOR}
 
-    EXTRACURRICULAR = 'Extracurricular'
+    CAPSTONE = 'Capstone'
     FINE_ARTS = 'Fine Arts'
     LANGUAGE_ARTS = 'Language Arts'
     MATHEMATICS = 'Mathematics'
@@ -109,7 +109,7 @@ class Credit(models.Model):
     WORLD_LANGUAGES = 'World Languages'
 
     SUBJECT_CHOICES = [
-        (EXTRACURRICULAR, 'Extracurricular Activity'),
+        (CAPSTONE, 'Capstone'),
         (FINE_ARTS, 'Fine Arts'),
         (LANGUAGE_ARTS, 'Language Arts'),
         (MATHEMATICS, 'Mathematics'),

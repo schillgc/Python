@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Schools</h2>
-    {% if institution_list %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="classes">Classes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Schools</li>
+        </ol>
+    </nav>
+
+{% if institution_list %}
     <ul>
         {% for institution in institution_list.all %}
             <li>
