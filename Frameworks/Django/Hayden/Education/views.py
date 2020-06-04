@@ -49,7 +49,7 @@ class CreditUpdate(UpdateView):
 
 
 class IndexView(TemplateView):
-    template_name = 'Education/index.html'
+    template_name = 'base.html'
 
 
 class InstitutionCreate(CreateView):
