@@ -143,6 +143,12 @@ class Credit(models.Model):
         blank=True,
     )
 
+    registered = models.BooleanField(default=False)
+
+    def is_registered(self):
+        if self.registered:
+            return self.registered
+
     def is_college_credit_eligible(self):
         return self.required_exam in {self.AP, self.CLEP}
 
@@ -153,3 +159,33 @@ class Credit(models.Model):
 
     def get_absolute_url(self):
         return reverse('credit-detail', kwargs={'pk': self.pk})
+
+
+class Instructor(models.Model):
+    school = models.ForeignKey(
+        Institution,
+        on_delete=models.CASCADE,
+    )
+
+    course = models.ForeignKey(
+        Credit,
+        on_delete=models.CASCADE,
+        blank=True,
+    )
+
+    first_name = models.CharField(
+        blank=True,
+        max_length=125,
+    )
+
+    last_name = models.CharField(
+        blank=True,
+        max_length=125,
+    )
+
+    email_address_of_instructor = models.EmailField(blank=True)
+    phone_number_of_instructor = PhoneNumberField(blank=True)
+
+    class Meta:
+        verbose_name = "Teaching Instructor"
+        verbose_name_plural = "Teaching Instructors"
