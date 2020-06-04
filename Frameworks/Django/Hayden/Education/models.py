@@ -16,10 +16,6 @@ class Institution(models.Model):
     headmaster = models.CharField(max_length=250)
     address = AddressField(on_delete=models.CASCADE)
     phone_number = PhoneNumberField()
-
-    # def __init__(self):
-    #     PHONENUMBER_DB_FORMAT = 'RFC3966'
-
     fax_number = PhoneNumberField(blank=True)
 
     admissions_director = models.CharField(
@@ -69,14 +65,14 @@ class Credit(models.Model):
     def __str__(self):
         return self.name
 
-    SIXTH_GRADE = '6G'
-    SEVENTH_GRADE = '7G'
-    EIGHTH_GRADE = '8G'
-    FRESHMAN = 'FR'
-    SOPHOMORE = 'SO'
-    JUNIOR = 'JR'
-    SENIOR = 'SR'
-    GRADUATE = 'GR'
+    SIXTH_GRADE = '6th Grade'
+    SEVENTH_GRADE = '7th Grade'
+    EIGHTH_GRADE = '8th Grade'
+    FRESHMAN = 'Freshman'
+    SOPHOMORE = 'Sophomore'
+    JUNIOR = 'Junior'
+    SENIOR = 'Senior'
+    GRADUATE = 'Graduate'
 
     YEAR_IN_SCHOOL_CHOICES = [
         (SIXTH_GRADE, '6th Grade'),
@@ -90,7 +86,7 @@ class Credit(models.Model):
     ]
 
     grade_level = models.CharField(
-        max_length=2,
+        max_length=9,
         choices=YEAR_IN_SCHOOL_CHOICES,
         blank=False,
     )
@@ -101,16 +97,16 @@ class Credit(models.Model):
     def is_upperschool(self):
         return self.grade_level in {self.FRESHMAN, self.SOPHOMORE, self.JUNIOR, self.SENIOR}
 
-    EXTRACURRICULAR = 'ECA.'
-    FINE_ARTS = 'FART'
-    LANGUAGE_ARTS = 'L.A.'
-    MATHEMATICS = 'MATH'
-    OUTDOOR_EDUCATION = 'O.E.'
-    PHYSICAL_EDUCATION = 'P.E.'
-    SCIENCE = 'SCI.'
-    SOCIAL_STUDIES = 'S.S.'
-    TECHNOLOGY = 'TECH'
-    WORLD_LANGUAGES = 'W.L.'
+    EXTRACURRICULAR = 'Extracurricular'
+    FINE_ARTS = 'Fine Arts'
+    LANGUAGE_ARTS = 'Language Arts'
+    MATHEMATICS = 'Mathematics'
+    OUTDOOR_EDUCATION = 'Outdoor Education'
+    PHYSICAL_EDUCATION = 'Physical Education'
+    SCIENCE = 'Science'
+    SOCIAL_STUDIES = 'Social Studies'
+    TECHNOLOGY = 'Technology'
+    WORLD_LANGUAGES = 'World Languages'
 
     SUBJECT_CHOICES = [
         (EXTRACURRICULAR, 'Extracurricular Activity'),
@@ -126,31 +122,30 @@ class Credit(models.Model):
     ]
 
     subject = models.CharField(
-        max_length=4,
+        max_length=18,
         choices=SUBJECT_CHOICES,
         blank=True,
     )
 
     AP = 'AP'
-    CLEP = 'CL'
-    COLLEGE = 'CO'
+    CLEP = 'CLEP'
 
     EXAM_CHOICES = [
         (AP, 'Advanced Placement'),
         (CLEP, 'College Level Examination Program'),
-        (COLLEGE, 'Taken @ College')
     ]
 
     required_exam = models.CharField(
-        max_length=2,
+        max_length=4,
         choices=EXAM_CHOICES,
         blank=True,
     )
 
     def is_college_credit_eligible(self):
-        return self.required_exam in {self.AP, self.CLEP, self.COLLEGE}
+        return self.required_exam in {self.AP, self.CLEP}
 
     class Meta:
+        ordering = ['school', 'grade_level', 'subject']
         verbose_name = "Graduation Credit"
         verbose_name_plural = "Graduation Credits"
 

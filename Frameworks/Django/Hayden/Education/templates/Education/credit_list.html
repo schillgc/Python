@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+    <h1><u>Classes</u></h1>
+    {% if credit_list %}
+    <ul>
+        {% for credit in credit_list.all %}
+            <li>
+                <p>{{ credit.grade_level }} {{ credit.subject }}: {{ credit.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No classes are available.</p>
+    {% endif %}
+{% endblock %}

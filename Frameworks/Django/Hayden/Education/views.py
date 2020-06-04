@@ -36,7 +36,6 @@ class CreditDetailView(generic.DetailView):
 
 class CreditIndexView(generic.ListView):
     model = Credit
-    paginate_by = 1  # if pagination is desired
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -69,7 +68,6 @@ class InstitutionDetailView(generic.DetailView):
 
 class InstitutionIndexView(generic.ListView):
     model = Institution
-    paginate_by = 100  # if pagination is desired
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
