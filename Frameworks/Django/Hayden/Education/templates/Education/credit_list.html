@@ -6,7 +6,7 @@
     <ul>
         {% for credit in credit_list.all %}
             <li>
-                <p>{{ credit.grade_level }} {{ credit.subject }}: {{ credit.name }}</p>
+                <p>{{ credit.grade_level }} {{ credit.subject }}: <b>{{ credit.name }}</b></p>
             </li>
         {% endfor %}
     </ul>
