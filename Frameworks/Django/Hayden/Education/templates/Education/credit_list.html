@@ -16,7 +16,12 @@
                     <div class="row">
                         <div class="col">
                             <ul class="list-group list-group-horizontal">
-                                <li class="list-group-item">{{ credit.grade_level }} {{ credit.subject }}: <b>{{ credit.required_exam }} {{ credit.name }}</b></li>
+                                <li class="list-group-item">
+                                    {{ credit.grade_level }}
+                                    <i>{{ credit.subject }}:</i> <br>
+                                    <br>
+                                    <b>{{ credit.required_exam }} {{ credit.name }}</b>
+                                </li>
                             </ul>
                         </div>
                     </div>
