@@ -23,6 +23,8 @@ class Institution(models.Model):
         blank=True,
     )
 
+    website = models.URLField(blank=True)
+
     application_received = models.BooleanField(default=False)
     application_submitted = models.BooleanField(default=False)
 

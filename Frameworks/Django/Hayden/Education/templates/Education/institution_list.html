@@ -13,7 +13,7 @@
     <ul>
         {% for institution in institution_list.all %}
             <li>
-                <h5>{{ institution.name }}</h5>
+                <h5><a href="{{ institution.website }}">{{ institution.name }}</a></h5>
             </li>
         {% endfor %}
     </ul>
