@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Schools</h2>
+    {% if institution_list %}
+    <ul>
+        {% for institution in institution_list.all %}
+            <li>
+                <h5>{{ institution.name }}</h5>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No schools are available.</p>
+    {% endif %}
+{% endblock %}
