@@ -16,7 +16,7 @@ dask==0.18.2
 decorator==4.3.0
 defusedxml==0.5.0
 dill==0.2.8.2
-Django==2.1rc1
+Django==2.2.13
 django-allauth==0.36.0
 django-allauth-bootstrap==0.2
 django-bootstrap==0.2.4
