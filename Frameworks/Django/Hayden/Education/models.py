@@ -93,12 +93,6 @@ class Credit(models.Model):
         blank=False,
     )
 
-    def is_middleschool(self):
-        return self.grade_level in {self.SIXTH_GRADE, self.SEVENTH_GRADE, self.EIGHTH_GRADE}
-
-    def is_upperschool(self):
-        return self.grade_level in {self.FRESHMAN, self.SOPHOMORE, self.JUNIOR, self.SENIOR}
-
     CAPSTONE = 'Capstone'
     FINE_ARTS = 'Fine Arts'
     LANGUAGE_ARTS = 'Language Arts'
@@ -145,12 +139,26 @@ class Credit(models.Model):
 
     registered = models.BooleanField(default=False)
 
-    def is_registered(self):
-        if self.registered:
-            return self.registered
+    raw_score_grade = models.DecimalField(
+        verbose_name="Course Grade Percentage",
+        max_digits=5,
+        decimal_places=2,
+        blank=True,
+        default=0.00,
+    )
 
-    def is_college_credit_eligible(self):
-        return self.required_exam in {self.AP, self.CLEP}
+    letter_grade = models.CharField(
+        verbose_name="Letter Grade",
+        max_length=2,
+        blank=True,
+    )
+
+    course_weighted_grade_point_average = models.DecimalField(
+        verbose_name="Weighted Grade Point Average for Course",
+        max_digits=3,
+        decimal_places=2,
+        default=0.00,
+    )
 
     class Meta:
         ordering = ['school', 'grade_level', 'subject']
