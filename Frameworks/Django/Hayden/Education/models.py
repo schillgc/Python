@@ -99,6 +99,7 @@ class Credit(models.Model):
     MATHEMATICS = 'Mathematics'
     OUTDOOR_EDUCATION = 'Outdoor Education'
     PHYSICAL_EDUCATION = 'Physical Education'
+    RELIGION = 'Religion'
     SCIENCE = 'Science'
     SOCIAL_STUDIES = 'Social Studies'
     TECHNOLOGY = 'Technology'
@@ -111,6 +112,7 @@ class Credit(models.Model):
         (MATHEMATICS, 'Mathematics'),
         (OUTDOOR_EDUCATION, 'Outdoor Education'),
         (PHYSICAL_EDUCATION, 'Physical Education'),
+        (RELIGION, 'Religious Studies'),
         (SCIENCE, 'Science'),
         (SOCIAL_STUDIES, 'Social Studies'),
         (TECHNOLOGY, 'Technology'),
@@ -125,10 +127,12 @@ class Credit(models.Model):
 
     AP = 'AP'
     CLEP = 'CLEP'
+    PLTW = 'PLTW'
 
     EXAM_CHOICES = [
         (AP, 'Advanced Placement'),
         (CLEP, 'College Level Examination Program'),
+        (PLTW, 'Project Lead the Way'),
     ]
 
     required_exam = models.CharField(
@@ -157,6 +161,7 @@ class Credit(models.Model):
         verbose_name="Weighted Grade Point Average for Course",
         max_digits=3,
         decimal_places=2,
+        blank=True,
         default=0.00,
     )
 
@@ -193,6 +198,9 @@ class Instructor(models.Model):
 
     email_address_of_instructor = models.EmailField(blank=True)
     phone_number_of_instructor = PhoneNumberField(blank=True)
+
+    def __str__(self):
+        return self.first_name and self.last_name
 
     class Meta:
         verbose_name = "Teaching Instructor"

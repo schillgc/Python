@@ -13,22 +13,24 @@
         {% for credit in credit_list.all %}
             <div class="grid">
                 <div class="container">
-                    <div class="row">
-                        <div class="col">
+                    <div class="row justify-content-md-center">
+                        <div class="col-sm-auto">
                             <ul class="list-group list-group-horizontal">
                                 <li class="list-group-item">
-                                    {{ credit.grade_level }}
-                                    <i>{{ credit.subject }}:</i> <br>
-                                    <br>
-                                    <b>{{ credit.required_exam }} {{ credit.name }}</b>
+                                    {{ credit.school|title|linebreaks }}
+                                    {{ credit.grade_level|capfirst }}
+                                    <i>{{ credit.subject|title|linebreaks }}</i>
+                                    <b>{{ credit.required_exam|upper }} {{ credit.name|capfirst }}</b>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        {% empty %}
+            <h1>No class data is available.</h1>
         {% endfor %}
     {% else %}
-        <p>No classes are available.</p>
+        <h1>Class data is currently unavailable.</h1>
     {% endif %}
 {% endblock %}
