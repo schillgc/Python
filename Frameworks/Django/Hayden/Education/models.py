@@ -1,24 +1,30 @@
+from address.models import AddressField
 from django.db import models
 from django.urls import reverse
-
-from address.models import AddressField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Institution(models.Model):
-    name = models.CharField(max_length=250)
-
-    def __str__(self):
-        return self.name
+    name = models.CharField(
+        verbose_name="Name of the School",
+        max_length=250
+    )
 
     next_year_full_tuition = models.DecimalField(max_digits=7, decimal_places=2)
 
-    headmaster = models.CharField(max_length=250)
-    address = AddressField(on_delete=models.CASCADE)
+    headmaster = models.CharField(
+        verbose_name="Name of " + str(name) + "'s Head of School",
+        max_length=250,
+    )
+    address = AddressField(
+        on_delete=models.CASCADE,
+        verbose_name=str(name) + "'s Address",
+    )
     phone_number = PhoneNumberField()
     fax_number = PhoneNumberField(blank=True)
 
     admissions_director = models.CharField(
+        verbose_name="Name of " + str(name) + "'s Admissions Director",
         max_length=250,
         blank=True,
     )
@@ -51,6 +57,9 @@ class Institution(models.Model):
         verbose_name = "Educational Institution"
         verbose_name_plural = "Educational Institutions"
 
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return reverse('institution-detail', kwargs={'pk': self.pk})
 
@@ -59,13 +68,11 @@ class Credit(models.Model):
     school = models.ForeignKey(
         Institution,
         on_delete=models.CASCADE,
+        verbose_name="Name of the School",
         blank=True,
     )
 
     name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
 
     SIXTH_GRADE = '6th Grade'
     SEVENTH_GRADE = '7th Grade'
@@ -88,6 +95,7 @@ class Credit(models.Model):
     ]
 
     grade_level = models.CharField(
+        verbose_name="Grade Level",
         max_length=9,
         choices=YEAR_IN_SCHOOL_CHOICES,
         blank=False,
@@ -120,6 +128,7 @@ class Credit(models.Model):
     ]
 
     subject = models.CharField(
+        verbose_name="Subject",
         max_length=18,
         choices=SUBJECT_CHOICES,
         blank=True,
@@ -136,6 +145,7 @@ class Credit(models.Model):
     ]
 
     required_exam = models.CharField(
+        verbose_name="Required Exam for College Credit",
         max_length=4,
         choices=EXAM_CHOICES,
         blank=True,
@@ -144,7 +154,7 @@ class Credit(models.Model):
     registered = models.BooleanField(default=False)
 
     raw_score_grade = models.DecimalField(
-        verbose_name="Course Grade Percentage",
+        verbose_name="Grade Percentage in " + str(name),
         max_digits=5,
         decimal_places=2,
         blank=True,
@@ -152,13 +162,13 @@ class Credit(models.Model):
     )
 
     letter_grade = models.CharField(
-        verbose_name="Letter Grade",
+        verbose_name="Letter Grade in " + str(name),
         max_length=2,
         blank=True,
     )
 
     course_weighted_grade_point_average = models.DecimalField(
-        verbose_name="Weighted Grade Point Average for Course",
+        verbose_name="Weighted Grade Point Average (GPA) for " + str(name),
         max_digits=3,
         decimal_places=2,
         blank=True,
@@ -170,6 +180,9 @@ class Credit(models.Model):
         verbose_name = "Graduation Credit"
         verbose_name_plural = "Graduation Credits"
 
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return reverse('credit-detail', kwargs={'pk': self.pk})
 
@@ -178,29 +191,40 @@ class Instructor(models.Model):
     school = models.ForeignKey(
         Institution,
         on_delete=models.CASCADE,
+        verbose_name="School Name",
     )
 
     course = models.ForeignKey(
         Credit,
         on_delete=models.CASCADE,
         blank=True,
+        verbose_name="Name of School Credit",
     )
 
     first_name = models.CharField(
+        verbose_name="Instructor's First Name",
         blank=True,
         max_length=125,
     )
 
     last_name = models.CharField(
+        verbose_name="Instructor's Last Name",
         blank=True,
         max_length=125,
     )
 
-    email_address_of_instructor = models.EmailField(blank=True)
-    phone_number_of_instructor = PhoneNumberField(blank=True)
+    email_address_of_instructor = models.EmailField(
+        verbose_name=str(first_name) + str(last_name) + "'s Email Address",
+        blank=True,
+    )
+
+    phone_number_of_instructor = PhoneNumberField(
+        verbose_name=str(first_name) + str(last_name) + "'s Telephone Number",
+        blank=True,
+    )
 
     def __str__(self):
-        return self.first_name and self.last_name
+        return self.last_name, self.first_name
 
     class Meta:
         verbose_name = "Teaching Instructor"

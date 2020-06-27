@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy
 from django.utils import timezone
-from django.views import generic
+from django.views.generic import DetailView, ListView
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, DeleteView, FormView, UpdateView
 
@@ -29,12 +29,12 @@ class CreditDelete(DeleteView):
     success_url = reverse_lazy('credit-detail')
 
 
-class CreditDetailView(generic.DetailView):
+class CreditDetailView(DetailView):
     model = Credit
     template_name = 'Education/credit_detail.html'
 
 
-class CreditIndexView(generic.ListView):
+class CreditIndexView(ListView):
     model = Credit
 
     def get_context_data(self, **kwargs):
@@ -61,12 +61,12 @@ class InstitutionDelete(DeleteView):
     success_url = reverse_lazy('institution-detail')
 
 
-class InstitutionDetailView(generic.DetailView):
+class InstitutionDetailView(DetailView):
     model = Institution
     template_name = 'Education/institution_detail.html'
 
 
-class InstitutionIndexView(generic.ListView):
+class InstitutionIndexView(ListView):
     model = Institution
 
     def get_context_data(self, **kwargs):
