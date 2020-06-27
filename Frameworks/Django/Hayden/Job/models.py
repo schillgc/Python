@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Career(models.Model):
-    job_title = models.CharField(
-        verbose_name="Job Title",
+    profession = models.CharField(
+        verbose_name="Profession",
         max_length=250,
     )
 
@@ -31,3 +31,6 @@ class Career(models.Model):
         choices=DEGREE_CHOICES,
         blank=False,
     )
+
+    def __str__(self):
+        return self.profession

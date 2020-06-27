@@ -1,0 +1,22 @@
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="classes">Classes</a></li>
+            <li class="breadcrumb-item"><a href="classes">Schools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Jobs</li>
+        </ol>
+    </nav>
+
+{% if career_list %}
+    <ul>
+        {% for job in career_list.all %}
+            <li>
+                <h5>{{ career.profession }}</h5>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No jobs are available.</p>
+    {% endif %}
+{% endblock %}

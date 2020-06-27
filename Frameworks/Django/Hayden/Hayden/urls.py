@@ -21,5 +21,6 @@ from Education.views import IndexView
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('education/', include('Education.urls')),
+    path('career/', include('Job.urls')),
     path('admin/', admin.site.urls),
 ]
