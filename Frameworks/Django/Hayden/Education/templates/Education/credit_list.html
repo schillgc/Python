@@ -22,6 +22,15 @@
                                     {{ credit.grade_level|capfirst }}
                                     <i>{{ credit.subject|title|linebreaks }}</i>
                                     <b>{{ credit.required_exam|upper }} {{ credit.name|capfirst }}</b>
+
+                                    {% if instructor_list %}
+                                        {% for instructor in instructor_list.all %}
+                                            <h2>{{ instructor.first_name|capfirst }} {{ instructor.last_name|capfirst}}</h2>
+                                        {% empty %}
+                                            <p>Instructor not yet recorded</p>
+                                        {% endfor %}
+                                    {% endif %}
+
                                 </li>
                             </ul>
                         </div>

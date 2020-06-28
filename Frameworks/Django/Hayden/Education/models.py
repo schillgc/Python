@@ -14,18 +14,18 @@ class Institution(models.Model):
     next_year_full_tuition = MoneyField(max_digits=7, decimal_places=2, default_currency='USD')
 
     headmaster = models.CharField(
-        verbose_name="Name of " + str(name) + "'s Head of School",
+        verbose_name="Head of School's Name",
         max_length=250,
     )
     address = AddressField(
         on_delete=models.CASCADE,
-        verbose_name=str(name) + "'s Address",
+        verbose_name="Institution's Address",
     )
     phone_number = PhoneNumberField()
     fax_number = PhoneNumberField(blank=True)
 
     admissions_director = models.CharField(
-        verbose_name="Name of " + str(name) + "'s Admissions Director",
+        verbose_name="Admissions Director's Name",
         max_length=250,
         blank=True,
     )
@@ -70,7 +70,7 @@ class Credit(models.Model):
     school = models.ForeignKey(
         Institution,
         on_delete=models.CASCADE,
-        verbose_name="Name of the School",
+        verbose_name="Name of Institution",
         blank=True,
     )
 
@@ -156,7 +156,7 @@ class Credit(models.Model):
     registered = models.BooleanField(default=False)
 
     raw_score_grade = models.DecimalField(
-        verbose_name="Grade Percentage in " + str(name),
+        verbose_name="Raw Class Grade Percentage",
         max_digits=5,
         decimal_places=2,
         blank=True,
@@ -164,13 +164,13 @@ class Credit(models.Model):
     )
 
     letter_grade = models.CharField(
-        verbose_name="Letter Grade in " + str(name),
+        verbose_name="Letter Grade",
         max_length=2,
         blank=True,
     )
 
     course_weighted_grade_point_average = models.DecimalField(
-        verbose_name="Weighted Grade Point Average (GPA) for " + str(name),
+        verbose_name="Weighted Grade Point Average (GPA)",
         max_digits=3,
         decimal_places=2,
         blank=True,
@@ -216,12 +216,12 @@ class Instructor(models.Model):
     )
 
     email_address_of_instructor = models.EmailField(
-        verbose_name=str(first_name) + str(last_name) + "'s Email Address",
+        verbose_name="Instructor's Email Address",
         blank=True,
     )
 
     phone_number_of_instructor = PhoneNumberField(
-        verbose_name=str(first_name) + str(last_name) + "'s Telephone Number",
+        verbose_name="Instructor's Telephone Number",
         blank=True,
     )
 
