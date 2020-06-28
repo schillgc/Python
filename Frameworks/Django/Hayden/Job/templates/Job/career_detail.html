@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% block content %}
+    <center>
+        <h1>{{ object.profession }}</h1>
+        {{ form }}
+        <p>Average Annual Salary: {{ object.average_salary }}</p>
+        <p>Education Required: {{ object.required_education }}</p>
+    </center>
+{% endblock %}

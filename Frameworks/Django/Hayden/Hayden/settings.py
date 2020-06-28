@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djmoney',
     'phonenumber_field',
     'address',
 ]
@@ -118,6 +119,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+CURRENCIES = 'USD'
+CURRENCY_CHOICES = [
+    ('USD', 'US Dollars'),
+    ('EUR', 'Euros'),
+    ('CAN', 'Canadian Dollars'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

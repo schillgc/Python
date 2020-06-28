@@ -1,3 +1,4 @@
+from djmoney.models.fields import MoneyField
 from django.db import models
 
 
@@ -7,7 +8,7 @@ class Career(models.Model):
         max_length=250,
     )
 
-    average_salary = models.DecimalField(max_digits=6, decimal_places=0)
+    average_salary = MoneyField(max_digits=6, decimal_places=0, default_currency='USD')
 
     MINIMUM_AGE = "Minimum Age"
     HIGH_SCHOOL_DIPLOMA = "High School Diploma"
@@ -34,3 +35,6 @@ class Career(models.Model):
 
     def __str__(self):
         return self.profession
+
+    class Meta:
+        ordering = ['required_education', 'average_salary', 'profession']

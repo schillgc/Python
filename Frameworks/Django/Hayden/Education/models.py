@@ -1,6 +1,7 @@
 from address.models import AddressField
 from django.db import models
 from django.urls import reverse
+from djmoney.models.fields import MoneyField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -10,7 +11,7 @@ class Institution(models.Model):
         max_length=250
     )
 
-    next_year_full_tuition = models.DecimalField(max_digits=7, decimal_places=2)
+    next_year_full_tuition = MoneyField(max_digits=7, decimal_places=2, default_currency='USD')
 
     headmaster = models.CharField(
         verbose_name="Name of " + str(name) + "'s Head of School",
@@ -56,6 +57,7 @@ class Institution(models.Model):
     class Meta:
         verbose_name = "Educational Institution"
         verbose_name_plural = "Educational Institutions"
+        ordering = ['name']
 
     def __str__(self):
         return self.name
@@ -176,7 +178,7 @@ class Credit(models.Model):
     )
 
     class Meta:
-        ordering = ['school', 'grade_level', 'subject']
+        ordering = ['school', 'grade_level', 'subject', 'required_exam', 'name']
         verbose_name = "Graduation Credit"
         verbose_name_plural = "Graduation Credits"
 
@@ -229,3 +231,4 @@ class Instructor(models.Model):
     class Meta:
         verbose_name = "Teaching Instructor"
         verbose_name_plural = "Teaching Instructors"
+        ordering = ['last_name', 'first_name']
