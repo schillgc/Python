@@ -74,6 +74,10 @@ class InstitutionIndexView(ListView):
         context['now'] = timezone.now()
         return context
 
+    def net_cost(self):
+        net_tuition = self.next_year_full_tuition - Institution.financial_aid_awarded
+        return net_tuition
+
 
 class InstitutionUpdate(UpdateView):
     model = Institution

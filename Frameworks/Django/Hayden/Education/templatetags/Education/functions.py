@@ -71,3 +71,8 @@ def is_registered(Credit):
 
 def is_upperschool(Credit):
     return Credit.grade_level in {Credit.FRESHMAN, Credit.SOPHOMORE, Credit.JUNIOR, Credit.SENIOR}
+
+
+def net_cost(Institution):
+    net_tuition = Institution.next_year_full_tuition - Institution.financial_aid_awarded
+    return net_tuition

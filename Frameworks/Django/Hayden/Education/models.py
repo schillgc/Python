@@ -11,7 +11,7 @@ class Institution(models.Model):
         max_length=250
     )
 
-    next_year_full_tuition = MoneyField(max_digits=7, decimal_places=2, default_currency='USD')
+    next_year_full_tuition = MoneyField(max_digits=7, decimal_places=0, default_currency='USD')
 
     headmaster = models.CharField(
         verbose_name="Head of School's Name",
@@ -43,10 +43,7 @@ class Institution(models.Model):
     accepted = models.BooleanField(default=False)
 
     financial_aid_requested = models.BooleanField(default=False)
-    financial_aid_awarded = models.DecimalField(
-        max_digits=7,
-        decimal_places=2,
-    )
+    financial_aid_awarded = MoneyField(max_digits=7, decimal_places=0, default_currency='USD')
 
     description = models.TextField(
         max_length=10000,

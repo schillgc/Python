@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load mathfilters %}
 {% block content %}
 
     <nav aria-label="breadcrumb">
@@ -15,6 +16,21 @@
         {% for institution in institution_list.all %}
             <li>
                 <h5><a href="{{ institution.website }}">{{ institution.name }}</a></h5>
+                {% if institution.accepted == True %}
+                    <p>Net Cost: {{ institution.next_year_full_tuition|sub:institution.financial_aid_awarded }}</p>
+                {% else %}
+                    {% if institution.application_submitted == False %}
+                        <p>Submit {{ institution.name|capfirst }}'s Application</p>
+                    {% endif %}
+
+                    {% if institution.teacher_recommendations_submitted == False %}
+                        <p>Teacher Recommendations Needed</p>
+                    {% endif %}
+
+                    {% if institution.toured == False %}
+                        <p>Visit {{ institution.name|capfirst }}</p>
+                    {% endif %}
+                {% endif %}
             </li>
         {% endfor %}
     </ul>
