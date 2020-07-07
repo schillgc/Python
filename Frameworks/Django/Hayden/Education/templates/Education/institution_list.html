@@ -17,14 +17,19 @@
             <li>
                 <h5><a href="{{ institution.website }}">{{ institution.name }}</a></h5>
                 {% if institution.accepted == True %}
+                    <h1>ACCEPTED!</h1>
                     <p>Net Cost: {{ institution.next_year_full_tuition|sub:institution.financial_aid_awarded }}</p>
                 {% else %}
-                    {% if institution.application_submitted == False %}
+                    {% if institution.application_requested == False %}
+                        <b>Contact {{ institution.name|capfirst }} for application</b>
+                    {% elif institution.application_submitted == False %}
                         <p>Submit {{ institution.name|capfirst }}'s Application</p>
                     {% endif %}
 
-                    {% if institution.teacher_recommendations_submitted == False %}
-                        <p>Teacher Recommendations Needed</p>
+                    {% if institution.teacher_recommendations_requested == False %}
+                        <p>Request Teacher Recommendations</p>
+                    {% elif institution.teacher_recommendations_submitted == False %}
+                        <p>Teacher Recommendations Requested</p>
                     {% endif %}
 
                     {% if institution.toured == False %}
