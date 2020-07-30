@@ -1,15 +1,6 @@
-{% extends "base.html" %}
+{% include "base.html" %}
 
 {% block content %}
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../career">Jobs</a></li>
-            <li class="breadcrumb-item"><a href="schools">Schools</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Classes</li>
-        </ol>
-    </nav>
-
     {% if credit_list %}
         {% for credit in credit_list.all %}
             <div class="grid">
@@ -44,3 +35,7 @@
         <h1>Class data is currently unavailable.</h1>
     {% endif %}
 {% endblock %}
+
+<footer>
+    {% include "lower_navbar.html" %}
+</footer>

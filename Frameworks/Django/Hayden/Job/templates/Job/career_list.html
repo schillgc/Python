@@ -1,14 +1,6 @@
-{% extends "base.html" %}
+{% include "base.html" %}
 
 {% block content %}
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../education/classes">Classes</a></li>
-            <li class="breadcrumb-item"><a href="../education/schools">Schools</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Jobs</li>
-        </ol>
-    </nav>
 
 {% if career_list %}
     <ul>
