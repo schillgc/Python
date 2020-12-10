@@ -131,7 +131,7 @@ SimplePool==0.1
 six==1.11.0
 swapper==1.1.0
 tensorboard==1.10.0
-tensorflow==1.10.0rc0
+tensorflow==2.4.0rc4
 termcolor==1.1.0
 terminado==0.8.1
 testpath==0.3.1
