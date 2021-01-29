@@ -14,14 +14,12 @@ player = {'location': None, 'path': []}
 
 
 def clear():
-    
     """Clear the screen"""
-    
+
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def build_cells(width, height):
-    
     """Create and return a 'width' x 'height' grid of two-tuples
     
     >>> cells = build_cells(2, 2)
@@ -29,8 +27,7 @@ def build_cells(width, height):
     4
     
     """
-    
-    
+
     cells = []
     for y in range(height):
         for x in range(width):
@@ -39,7 +36,6 @@ def build_cells(width, height):
 
 
 def get_locations(cells):
-    
     """Randomly pick starting locations for the monster, the door,
     and the player
     
@@ -52,8 +48,7 @@ def get_locations(cells):
     True
     
     """
-    
-    
+
     monster = random.choice(cells)
     door = random.choice(cells)
     player = random.choice(cells)
@@ -65,7 +60,6 @@ def get_locations(cells):
 
 
 def get_moves(player):
-    
     """Based on the tuple of the player's position, return the list
     of acceptable moves
     
@@ -74,8 +68,7 @@ def get_moves(player):
     ['RIGHT', 'UP', 'DOWN']
     
     """
-    
-    
+
     x, y = player
     moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
     if x == 0:
@@ -103,8 +96,8 @@ def move_player(player, move):
     return x, y
 
 
-def draw_map():
-    print(' _'*GAME_DIMENSIONS[0])
+def draw_map(cells):
+    print(' _' * GAME_DIMENSIONS[0])
     row_end = GAME_DIMENSIONS[0]
     tile = '|{}'
     for index, cell in enumerate(cells):
@@ -122,6 +115,7 @@ def draw_map():
                 print(tile.format('.|'))
             else:
                 print(tile.format('_|'))
+
 
 def play():
     cells = build_cells(*GAME_DIMENSIONS)
@@ -157,6 +151,7 @@ def play():
         elif player['location'] == monster:
             print("\n** You got eaten! **\n")
             break
+
 
 if __name__ == '__main__':
     play()
