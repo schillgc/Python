@@ -1,43 +1,46 @@
-from datetime import date
 import locale
+from datetime import date
 
 locale.setlocale(locale.LC_ALL, 'English_United States.1252')
 
 
 def bill_ingredients(family_member):
-    ''' Cell Phone Plan Rates Subtotal '''
-    number_of_lines = 5
+    """ Cell Phone Plan Rates Subtotal """
+    number_of_lines = 6
     line_one = 65
     line_two = 45
     additional_lines = 25
-    prorated_charges = 4.17
-    unlimited_basic_phone_plan = (prorated_charges + line_one + line_two + (
-        additional_lines * (number_of_lines - 2))) / (number_of_lines)
-    # print("Equally Divided Plan:", locale.currency(unlimited_basic_phone_plan, grouping=True))
+    unlimited_basic_phone_plan: float = (
+            line_one + line_two + (additional_lines * (number_of_lines - 2)))
+    equally_divided_base_phone_plan_charge = unlimited_basic_phone_plan / number_of_lines
+    # print("Equally Divided Plan:", locale.currency(equally_divided_base_phone_plan_charge, grouping=True))
 
-    ''' Autopayment & Other Discounts '''
+    ''' Auto-Payment & Other Discounts '''
     discounts = 0
-    autopay = True
-    autopay_plan_discount = 5
-    if autopay:
-        discounts += autopay_plan_discount
+    auto_pay = True
+    auto_pay_plan_discount = 5
+    if auto_pay:
+        discounts += auto_pay_plan_discount
     else:
-        print("You can save by autopaying")
+        print("You can save by auto-paying")
 
     if family_member == "Gavin":
         sprint_perks_discount = 5
         discounts += sprint_perks_discount
     elif family_member == "Hayden":
         line_on_us_three_unlimited_service_plan = 20
-        prorated_charges = 3.33 + 0.83
-        discounts += line_on_us_three_unlimited_service_plan + prorated_charges
+        discounts += line_on_us_three_unlimited_service_plan
+
     # if not discounts == 0:
     #     print("Discounts:", locale.currency(discounts, grouping=True))
 
     ''' Plans & Services Subtotal '''
-    plans_and_services = unlimited_basic_phone_plan - discounts
-    print("Plans & Services:", locale.currency(
-        plans_and_services, grouping=True))
+    plans_and_services = equally_divided_base_phone_plan_charge - discounts
+    if not family_member == "Hayden":
+        if (equally_divided_base_phone_plan_charge - 25) > 0:
+            plans_and_services += (equally_divided_base_phone_plan_charge - 25) / (number_of_lines - 1)
+    if not family_member == "Hayden":
+        print("Plans & Services (After Discounts):", locale.currency(plans_and_services, grouping=True))
 
     ''' Hayden's Phone Payoff '''
     equipment = 0
@@ -51,22 +54,18 @@ def bill_ingredients(family_member):
     ''' Sprint Complete & Sprint Premium Services Subtotal '''
     sprint_complete = 0
     sprint_premium_services = 0
-    protection_plan_for_Hayden = True
-    if protection_plan_for_Hayden:
+    protection_plan_for_hayden = True
+    if protection_plan_for_hayden:
         if not family_member == "Hayden" and not family_member == "Ian":
             # Hayden's Protection Plan
-            sprint_complete += ((1.5 + 9) / (number_of_lines - 1))
-    if family_member == "Blair" or family_member == "Ian":
+            sprint_complete += (9 / (number_of_lines - 2))
+    if family_member == "Blair":
         sprint_complete += 19
-    elif family_member == "Ellie":
+    elif family_member == "Ellie" or family_member == "Ian":
         sprint_complete += 15
-    elif family_member == "Gavin":
-        sprint_complete -= 2.53
     if not sprint_complete == 0:
         print("Sprint Complete:", locale.currency(
             sprint_complete, grouping=True))
-    if family_member == "Blair":
-        sprint_premium_services += 9.99
     if not sprint_premium_services == 0:
         print("Sprint Premium Services:", locale.currency(
             sprint_premium_services, grouping=True))
@@ -74,10 +73,10 @@ def bill_ingredients(family_member):
     ''' Surcharges Subtotal '''
     surcharges = 0
     if not family_member == "Hayden":
-        administrative_charge = 15
-        federal_universal_service_access = 1.77
-        kentucky_state_gross_receipts_surcharge = 0.53
-        regulatory_charge = 5.94
+        administrative_charge = 17.5
+        federal_universal_service_access = 4.58
+        kentucky_state_gross_receipts_surcharge = 0.92
+        regulatory_charge = 6.93
         surcharges += (administrative_charge + federal_universal_service_access +
                        kentucky_state_gross_receipts_surcharge + regulatory_charge) / (number_of_lines - 1)
     if not surcharges == 0:
@@ -86,10 +85,10 @@ def bill_ingredients(family_member):
     ''' Government Taxes & Fees Subtotal '''
     government_taxes_and_fees = 0
     if not family_member == "Hayden":
-        emergency_tax = 3.5
-        lifeline_fee = 0.35
-        sales_tax = 2.6
-        trs_tap = 0.15
+        emergency_tax = 4.2
+        lifeline_fee = 0.42
+        sales_tax = 4.42
+        trs_tap = 0.18
         government_taxes_and_fees += (emergency_tax + lifeline_fee +
                                       sales_tax + trs_tap) / (number_of_lines - 1)
     if not government_taxes_and_fees == 0:
@@ -100,22 +99,22 @@ def bill_ingredients(family_member):
     due = sprint_premium_services
     if not family_member == "Hayden":
         due += plans_and_services + sprint_complete + \
-            surcharges + government_taxes_and_fees
-    if not family_member == "Hayden" or not family_member == "Gavin":
+               surcharges + government_taxes_and_fees
+    if family_member == "Ellie" or family_member == "Blair" or family_member == "Mama":
         due += equipment
     return locale.currency(due, grouping=True)
 
 
 def bill(family_member):
-    ''' Billing Function '''
+    """ Billing Function """
     if family_member:
-        print("Total Due: ", bill_ingredients(family_member))
+        print("Total Due: " + bill_ingredients(family_member))
 
 
 def main():
-    ''' Family Members to Be Billed '''
+    """ Family Members to Be Billed """
     print('\n', date.today().strftime("%A, %B %d, %Y"), '\n')
-    family_members = ["Hayden", "Gavin", "Mama", "Ellie", "Blair"]
+    family_members = ["Hayden", "Gavin", "Mama", "Ian", "Ellie", "Blair"]
     for family_member in family_members:
         print(family_member)
         bill(family_member)
