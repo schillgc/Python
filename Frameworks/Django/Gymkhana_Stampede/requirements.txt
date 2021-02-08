@@ -67,7 +67,7 @@ googleapis-common-protos==1.6.0b4
 grpc-google-iam-v1==0.11.4
 grpcio==1.14.0rc1
 html5lib==1.0.1
-httplib2==0.11.3
+httplib2==0.19.0
 idna==2.7
 ImageScraper==2.0.7
 ipykernel==4.8.2
