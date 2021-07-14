@@ -51,4 +51,4 @@ def divide(num1, num2):
     return render_template("divide.html", **context)
 
 
-app.run(debug = True, port = 8000, host = '0.0.0.0')
+app.run(debug = False, port = 8000, host = '0.0.0.0')
