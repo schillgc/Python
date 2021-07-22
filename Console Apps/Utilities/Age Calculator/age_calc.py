@@ -1,9 +1,32 @@
 from datetime import date
 
 " Asks user's data "
-your_name = input("Hello!  What is your name?  ")
-their_name = input(f"{your_name}, what is target's name?  ")
-state = input(f"{your_name}, what US state or territory are you interested in checking?  ")
+while True:
+    your_name = input("Hello!  What is your name?  ")
+    try:
+        your_name = str(your_name)
+    except ValueError:
+        continue
+    else:
+        break
+
+while True:
+    their_name = input(f"{your_name}, what is target's name?  ")
+    try:
+        their_name = str(their_name)
+    except ValueError:
+        continue
+    else:
+        break
+
+while True:
+    state = input(f"{your_name}, what US state or territory are you interested in checking?  ")
+    try:
+        state = str(state)
+    except ValueError:
+        continue
+    else:
+        break
 
 while True:
     their_year_of_birth = input(f"{your_name}, what year was {their_name} born?  ")
@@ -97,25 +120,25 @@ elif their_year_of_birth > date.today().year:
     print(f"Congratulations!  {their_name} will be born soon presumably in the year of {their_year_of_birth}!")
 elif their_year_of_birth < date.today().year:
     print(f"Since {their_name} is roughly {their_age} years old, thus is ")
-    if their_age >= legal_to_consent.get(state) and your_age >= legal_to_consent.get(state):
+    if their_age >= legal_to_consent[state] and your_age >= legal_to_consent[state]:
         print(f"able to freely consent in {state}")
-    elif their_age < legal_to_consent.get(state) or your_age < legal_to_consent.get(state):
-        if int(your_age) - int(their_age) <= abs(2) or int(their_age) - int(your_age) <= abs(2):
+    elif their_age < legal_to_consent[state] or your_age < legal_to_consent[state]:
+        if int(your_age) - int(their_age) <= 2 or int(their_age) - int(your_age) <= 2:
             if state == 'Alabama' or state == 'Arizona' or state == 'Connecticut' or state == 'Minnesota' or state == 'Mississippi' or state == 'Washington':
                 print(romeo_and_juliet)
             else:
                 print(jail_bait)
-        elif int(your_age) - int(their_age) <= abs(3) or int(their_age) - int(your_age) <= abs(3):
+        elif int(your_age) - int(their_age) <= 3 or int(their_age) - int(your_age) <= 3:
             if state == 'Alaska' or state == 'Arkansas' or state == 'Louisiana' or state == 'Oregon' or state == 'South Dakota' or state == 'Texas':
                 print(romeo_and_juliet)
             else:
                 print(jail_bait)
-        elif int(your_age) - int(their_age) <= abs(4) or int(their_age) - int(your_age) <= abs(4):
+        elif int(your_age) - int(their_age) <= 4 or int(their_age) - int(your_age) <= 4:
             if state == 'Colorado' or state == 'Iowa' or state == 'Maryland' or state == 'New Jersey' or state == 'New Mexico' or state == 'North Carolina' or state == 'Pennsylvania' or state == 'Tennessee' or state == 'West Virginia' or state == 'Wyoming':
                 print(romeo_and_juliet)
             else:
                 print(jail_bait)
-        elif int(your_age) - int(their_age) <= abs(5) or int(their_age) - int(your_age) <= abs(5):
+        elif int(your_age) - int(their_age) <= 5 or int(their_age) - int(your_age) <= 5:
             if state == 'Hawaii' or state == 'Maine':
                 print(romeo_and_juliet)
             else:
